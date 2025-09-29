@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chef Robert R. | Culinary Portfolio</title>
+
+    <!-- 1. Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 2. Tailwind Configuration (Colors & Fonts) -->
+    <script>
+      // Customizing the Tailwind theme to match the culinary brand aesthetic
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-dark': '#1a1a1a', // Charcoal Black
+              'accent-gold': '#aa8453', // Deep Gold/Copper for highlights
+              'light-bg': '#f7f7f7', // Off-White/Cream
+            },
+            fontFamily: {
+              // Playfair Display for authoritative headings, Poppins for clean body text
+              heading: ['"Playfair Display"', 'serif'],
+              body: ['Poppins', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- 3. Google Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Custom CSS: Used only for the hero background image placeholder -->
+    <style>
+      .hero-bg {
+        background-image: url('/images/Chicken\ biryani.jpg');
+      }
+    </style>
+  </head>
+
+  <body class="font-body text-primary-dark bg-light-bg antialiased">
+    <!-- HEADER / NAVIGATION -->
+    <header
+      class="sticky top-0 z-50 flex justify-between items-center px-4 md:px-12 py-4 bg-white/95 shadow-lg"
+    >
+      <div class="text-2xl font-heading text-accent-gold tracking-wider">
+        CHEF ROBERT R.N.
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-8">
+        <a
+          href="#home"
+          class="text-primary-dark hover:text-accent-gold transition duration-300 font-medium tracking-wide"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="text-primary-dark hover:text-accent-gold transition duration-300 font-medium tracking-wide"
+          >About</a
+        >
+        <a
+          href="#dishes"
+          class="text-primary-dark hover:text-accent-gold transition duration-300 font-medium tracking-wide"
+          >Dishes</a
+        >
+        <a
+          href="#contact"
+          class="text-primary-dark hover:text-accent-gold transition duration-300 font-medium tracking-wide"
+          >Contact</a
+        >
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="hamburger"
+        class="md:hidden text-3xl text-accent-gold focus:outline-none p-2"
+      >
+        &#9776;
+      </button>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 h-full w-full bg-primary-dark/95 z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 md:hidden"
+    >
+      <button
+        onclick="closeMenu()"
+        class="absolute top-5 right-5 text-white text-4xl"
+      >
+        &times;
+      </button>
+      <a
+        href="#home"
+        class="text-white text-3xl font-heading hover:text-accent-gold transition duration-200"
+        onclick="closeMenu()"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="text-white text-3xl font-heading hover:text-accent-gold transition duration-200"
+        onclick="closeMenu()"
+        >About</a
+      >
+      <a
+        href="#dishes"
+        class="text-white text-3xl font-heading hover:text-accent-gold transition duration-200"
+        onclick="closeMenu()"
+        >Dishes</a
+      >
+      <a
+        href="#contact"
+        class="text-white text-3xl font-heading hover:text-accent-gold transition duration-200"
+        onclick="closeMenu()"
+        >Contact</a
+      >
+    </div>
+
+    <main>
+      <!-- HERO SECTION: High-impact full screen visual -->
+      <section
+        id="home"
+        class="hero-bg h-screen flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat shadow-inner"
+      >
+        <div class="p-8 bg-black/50 rounded-xl max-w-4xl mx-auto shadow-2xl">
+          <h1
+            class="font-heading text-white text-5xl md:text-7xl lg:text-8xl mb-4 font-bold tracking-tight"
+          >
+            Mastering Flavor, Artistry on a Plate
+          </h1>
+          <p class="text-light-bg text-lg md:text-2xl mb-10 font-light">
+            Modern Cuisine with a Focus on Seasonal, Local Ingredients.
+          </p>
+          <a
+            href="#dishes"
+            class="inline-block px-10 py-4 bg-accent-gold text-white font-semibold rounded-full shadow-2xl hover:bg-[#c99a61] transition duration-300 transform hover:scale-105 uppercase tracking-wider"
+          >
+            View Signature Dishes
+          </a>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION: Personal story and philosophy -->
+      <section
+        id="about"
+        class="py-20 px-4 md:px-12 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"
+      >
+        <div class="md:w-1/2 order-2 md:order-1">
+          <h2
+            class="font-heading text-4xl text-accent-gold mb-6 border-b-2 border-accent-gold pb-2 inline-block"
+          >
+            The Culinary Vision
+          </h2>
+          <p class="mb-4 text-gray-700 leading-relaxed">
+            After refining my craft in demanding kitchens and completing
+            formative work, including several influential months working at the
+            esteemed Nyali Golf Club in Mombasa, I returned with a simple
+            philosophy: let the ingredients speak. My cuisine blends classic
+            techniques with bold, unexpected flavors. Every dish is a journey,
+            meticulously plated for a truly memorable dining experience.
+          </p>
+          <p
+            class="italic my-6 pl-5 border-l-4 border-accent-gold text-xl text-gray-800 font-light"
+          >
+            "Cooking is not just about ingredients, recipes, and heat; it's
+            about giving happiness."
+          </p>
+          <a
+            href="#contact"
+            class="inline-block mt-4 px-6 py-3 bg-primary-dark text-white font-medium rounded-lg hover:bg-gray-800 transition duration-300 shadow-md"
+          >
+            Book a Consultation
+          </a>
+        </div>
+        <img
+          src="/images/Chef.jpg"
+          alt="Professional Portrait"
+          class="md:w-1/3 w-full h-96 object-cover rounded-xl shadow-2xl border-4 border-white order-1 md:order-2"
+        />
+      </section>
+
+      <!-- DISHES/MENU SECTION: Culinary highlights in a grid -->
+      <section id="dishes" class="py-20 px-4 md:px-12 bg-white text-center">
+        <h2 class="font-heading text-4xl md:text-5xl mb-16 text-primary-dark">
+          Signature Dishes
+        </h2>
+        <!-- Responsive change: Single column on mobile, three columns on desktop -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <!-- Dish Card 1 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Chicken biryani.jpg"
+              alt="Chicken Biryani"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Chicken Biryani
+              </h3>
+              <p class="text-gray-600 font-light">
+                Chicken Biryani is a spiced rice and chicken dish, slow-cooked
+                with potatoes and fragrant Swahili flavors.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 2 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Beef mshikaki.jpg"
+              alt="Beef mshikaki"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Beef Mshikaki
+              </h3>
+              <p class="text-gray-600 font-light">
+                Beef mshikaki, served with naan bread Sauce: mint, ukwaju
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 3 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Cakes.jpg"
+              alt="Cakes"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">Cakes</h3>
+              <p class="text-gray-600 font-light">
+                A variety of cakes, from simple classics to custom designs for
+                any occasion.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 4 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Beef biryani.jpg"
+              alt="Beef Biryani"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Beef Biryani
+              </h3>
+              <p class="text-gray-600 font-light">
+                A hearty Swahili delicacy made by layering tender, spiced beef
+                with fragrant rice and slow-cooking it to perfection.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 5 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Pan fried red snapper.jpg"
+              alt="Red Snapper"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Pan-Fried Red Snapper
+              </h3>
+              <p class="text-gray-600 font-light">
+                A tender, flavorful fish dish, seasoned with coastal spices for
+                a fresh, vibrant taste and served with mchicha.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 6 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Chips chicken grilled.jpg"
+              alt="Lamb Loin"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Chips / Chicken Grilled
+              </h3>
+              <p class="text-gray-600 font-light">
+                Grilled chicken with chips is a simple yet flavorful dish,
+                pairing juicy, well-seasoned chicken with golden, crispy fries.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 7 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Gull grilled chicken.jpg"
+              alt="Gull Grilled Chicken"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Full Grilled Chicken
+              </h3>
+              <p class="text-gray-600 font-light">
+                A whole bird marinated in spices, then slowly flame-grilled to
+                achieve a smoky flavor and tender, juicy meat.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 8 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Mahamri.jpg"
+              alt="Mahamri"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Mahamri
+              </h3>
+              <p class="text-gray-600 font-light">
+                Soft, Swahili pastries flavored with coconut and cardamom,
+                enjoyed as a sweet snack or breakfast treat.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dish Card 9 -->
+          <div
+            class="bg-light-bg rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl hover:border-b-4 border-accent-gold transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="/images/Chicken biryani 2.jpg"
+              alt="Chicken Biryani"
+              class="w-full h-72 object-cover transition duration-300 hover:scale-[1.03]"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-heading text-2xl text-accent-gold mb-2">
+                Chicken Biryani
+              </h3>
+              <p class="text-gray-600 font-light">
+                Chicken Biryani is a spiced rice and chicken dish, slow-cooked
+                with potatoes and fragrant Swahili flavors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION: Direct Mailto Link -->
+      <section
+        id="contact"
+        class="py-20 px-4 md:px-12 bg-primary-dark text-white text-center"
+      >
+        <h2 class="font-heading text-4xl md:text-5xl mb-6 text-accent-gold">
+          Ready to Book?
+        </h2>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light">
+          For private dining, catering quotes, or culinary consulting, please
+          reach out directly via email. I look forward to hearing from you!
+        </p>
+
+        <div class="max-w-xl mx-auto space-y-8">
+          <!-- Display Email Address -->
+          <p class="text-2xl font-semibold mb-6">
+            Email: <span class="text-accent-gold">robertrandu7@gmail.com</span>
+          </p>
+
+          <!-- Mailto CTA Button (Wider on mobile, auto width on desktop for better touch targets) -->
+          <a
+            href="mailto:hello@chefannar.com?subject=Inquiry%20from%20Culinary%20Portfolio%20Website&body=Hello%20Chef%20Anna,%0A%0AI%20am%20interested%20in%20discussing%20a%20culinary%20opportunity.%0A%0AName:%0AEvent%20Date/Project%20Timeline:%0AGuest%20Count/Scope%20of%20Work:"
+            class="inline-block w-full md:w-auto px-12 py-4 bg-accent-gold text-white font-semibold rounded-full shadow-2xl hover:bg-[#c99a61] transition duration-300 transform hover:scale-[1.03] uppercase tracking-wider text-lg"
+          >
+            <i class="fas fa-envelope mr-2"></i> Send Inquiry via Gmail
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-black text-center text-gray-400">
+      <p>&copy; 2025 Chef Robert R.N. All Rights Reserved.</p>
+      <div class="social-links mt-4 space-x-6">
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="text-2xl hover:text-accent-gold transition duration-300"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="#"
+          aria-label="Facebook"
+          class="text-2xl hover:text-accent-gold transition duration-300"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          class="text-2xl hover:text-accent-gold transition duration-300"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT for Mobile Menu functionality -->
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      // Function to toggle the mobile menu state
+      function toggleMenu() {
+        // Toggles the translate-x-full class to slide the menu in/out
+        mobileMenu.classList.toggle('translate-x-full');
+
+        // Updates the button icon
+        hamburger.innerHTML = mobileMenu.classList.contains('translate-x-full')
+          ? '&#9776;'
+          : '&times;';
+      }
+
+      // Function to ensure menu closes when a link is clicked
+      function closeMenu() {
+        mobileMenu.classList.add('translate-x-full');
+        hamburger.innerHTML = '&#9776';
+      }
+
+      // Attach event listener to the hamburger button
+      hamburger.addEventListener('click', toggleMenu);
+
+      // Note: The 'closeMenu' function is attached directly to the mobile links in the HTML
+    </script>
+  </body>
+</html>
